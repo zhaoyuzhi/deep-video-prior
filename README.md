@@ -39,13 +39,13 @@ unzip VGG_Model.zip
 
 ## Inference
 
-### Demo 
+### Demo
 ```
 bash test.sh
 ```
 The results are placed in ./result
 
-### Use your own data 
+### Use your own data
 For the video with unimodal inconsistency:
 
 ```
@@ -58,7 +58,37 @@ For the video with multimodal inconsistency:
 python dvp_video_consistency.py --input PATH_TO_YOUR_INPUT_FOLDER --processed PATH_TO_YOUR_PROCESSED_FOLDER --task NAME_OF_YOUR_MODEL --with_IRT 1 --IRT_initialization 1 --output ./result/OWN_DATA
 ```
 
-Other information
+### Process single image colorization methods' results (for VCGAN, SVCNet)
+
+Note that it is better to only handle one method at one time; forward memory cost for DAVIS dataset: approximately 8500 Mb
+
+1. Put all ground truth grayscale frame subfolders under **/demo/consistency/colorization** and rename them
+
+e.g., rename 'lab-coat' to 'input-lab-coat'; rename 'libby' to 'input-libby'
+
+2. Put all methods' result subfolders under **/demo/consistency/colorization**
+
+note that it is no need to rename them if there are only one method's results are handled
+
+3. Change **subfolder** parameter and run test_svcnet.sh
+
+```bash
+bash test_svcnet.sh
+```
+
+if there is question, please see print_all_subfolders.sh
+
+4. Results will be saved in result/colorization/${data}/${method}+DVP
+
+e.g., result/colorization/DAVIS/CIC+DVP
+
+5. Convert all results to formatted files, by running recover_results.py
+
+```bash
+python recover_results.py
+```
+
+### Other information
 ```
   -h, --help            show this help message and exit
   --task TASK           Name of task
