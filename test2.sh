@@ -1,6 +1,6 @@
 #!/bin/bash
 data=videvo
-method=IAC
+method=RUIC
 subfolder=(AircraftTakingOff1 CoupleRidingMotorbike Cycling Ducks FarmingLandscape FatherAndChild2 Festival Freeway2 Koala Madagascar MenRidingMotorbike PalmTrees PoliceCar SilverCat SkateboarderTableJump Surfing TimeSquareTraffic Vineyard Waterfall2 YogaHut2)
 
 for element in ${subfolder[@]}

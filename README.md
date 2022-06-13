@@ -7,11 +7,8 @@ Code for NeurIPS 2020 paper: Blind Video Temporal Consistency via Deep Video Pri
 ## Introduction
 Our method is a general framework to improve the temporal consistency of video processed by image algorithms. For example, combining image colorization or image dehazing algorithm with our framework, we can achieve the goal of video colorization or video dehazing. 
 
-
 <img src="example/example_in.gif" height="220px"/> <img src="example/example_out.gif" height="220px"/> 
 <img src="example/example2_in.gif" height="220px"/> <img src="example/example2_out.gif" height="220px"/> 
-
-
 
 ## Dependencey
 
@@ -34,8 +31,6 @@ cd deep-video-prior
 python download_VGG.py
 unzip VGG_Model.zip
 ```
-
-
 
 ## Inference
 
@@ -73,7 +68,8 @@ note that it is no need to rename them if there are only one method's results ar
 3. Change **subfolder** parameter and run test_svcnet.sh
 
 ```bash
-bash test_svcnet.sh
+bash test1.sh
+bash test2.sh
 ```
 
 if there is question, please see print_all_subfolders.sh
